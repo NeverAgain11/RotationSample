@@ -29,6 +29,9 @@ class PresentViewController: UIViewController {
         return button
     }()
     
+    let textfield = UITextField()
+    
+    
     //MARK: UIViewController 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,9 @@ class PresentViewController: UIViewController {
         someButton.frame = CGRect(x: 100, y: 50, width: 150, height: 50)
         
         dismissButton.frame = CGRect(x: 100, y: 150, width: 150, height: 50)
+        
+        textfield.frame = .init(x: 0, y: 0, width: 200, height: 50)
+        textfield.center = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -92,8 +98,11 @@ class PresentViewController: UIViewController {
 
 private extension PresentViewController {
     func setupUI() {
+        textfield.placeholder = "textfield"
+        
         view.addSubview(someButton)
         view.addSubview(dismissButton)
+        view.addSubview(textfield)
         
         view.backgroundColor = .yellow
     }

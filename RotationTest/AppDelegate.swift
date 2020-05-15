@@ -78,9 +78,9 @@ extension UIViewController {
             return self.topViewController(withRootViewController: nav.visibleViewController)
         }
         
-        if let presentedViewController = root.presentedViewController {
-            return self.topViewController(withRootViewController: presentedViewController)
-        }
+//        if let presentedViewController = root.presentedViewController {
+//            return self.topViewController(withRootViewController: presentedViewController)
+//        }
         
         return root
     }

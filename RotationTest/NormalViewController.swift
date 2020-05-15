@@ -20,6 +20,8 @@ class NormalViewController: UIViewController {
         return button
     }()
     
+    let textfield = UITextField()
+    
     //MARK: UIViewController 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,8 @@ class NormalViewController: UIViewController {
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return [.portrait, .landscapeLeft]
+//        return [.portrait, .landscapeLeft]
+        return [.portrait]
     }
     
     override var shouldAutorotate: Bool {
@@ -55,6 +58,9 @@ class NormalViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         someButton.frame = CGRect(x: 100, y: 50, width: 50, height: 50)
+        
+        textfield.frame = .init(x: 0, y: 0, width: 200, height: 50)
+        textfield.center = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
     }
     
     @objc func someButtonTapped() {
@@ -64,8 +70,10 @@ class NormalViewController: UIViewController {
 
 private extension NormalViewController {
     func setupUI() {
-        view.addSubview(someButton)
+        textfield.placeholder = "textfield"
         
+        view.addSubview(someButton)
+        view.addSubview(textfield)
         view.backgroundColor = .white
     }
 
